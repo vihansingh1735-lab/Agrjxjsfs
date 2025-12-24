@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js">
-</script><meta charset="UTF-8">
-  <title>Alpha Contingency Force 👑</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Alpha Contingency Force | Christmas Ops</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!-- 🎄 CHRISTMAS LOADING SCREEN -->
+
+<!-- ❄️ Snow Canvas -->
+<canvas id="snow"></canvas>
+
+<!-- 🎄 Loader -->
 <div id="loader">
   <div class="loader-ring"></div>
   <h1 class="loader-text">ACF</h1>
   <p class="loader-sub">Alpha Contingency Force</p>
   <p class="loader-christmas">❄️ Christmas Operations Loading...</p>
 </div>
-<!-- ❄️ SNOW -->
-<canvas id="snow"></canvas>
 
 <header>
   <h1 class="logo">ACF</h1>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="circle">COMING<br>SOON</div>
   <h2>POSITION FILLING</h2>
@@ -31,83 +30,36 @@
   <p class="small">Applications being reviewed</p>
 </section>
 
-<!-- STATUS CARD -->
 <section class="card">
-  <h2>POSITION FILLING</h2>
-  <p class="open">RECRUITMENT OPEN</p>
-  <p>Applications being reviewed</p>
+  <h2>SECURITY FORCE</h2>
+  <p class="tagline">PROTECTION • UNITY • EXCELLENCE</p>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery">
-  <h2>📸 GALLERY</h2>
-
-  <div class="slider">
-    <img src="images/img1.jpg" class="slide active">
-    <img src="images/img2.jpg" class="slide">
-    <img src="images/img3.jpg" class="slide">
-
-    <button class="nav left">❮</button>
-    <button class="nav right">❯</button>
-  </div>
-
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-
-<!-- ABOUT -->
 <section class="about">
-  <h1>SECURITY FORCE</h1>
-  <p>PROTECTION • UNITY • EXCELLENCE</p>
+  <h1>ALPHA CONTINGENCY FORCE</h1>
+  <p class="desc">
+    Elite response unit operating under winter protocols.
+    Precision, coordination, and discipline define ACF.
+  </p>
 
-  <button class="main-btn">🎄 Join Alpha Contingency Force 👑</button>
+  <a
+    href="https://discord.gg/DjmVrPkxT2"
+    target="_blank"
+    class="main-btn"
+  >
+    🎄 Join Our Discord
+  </a>
+
   <span class="est">EST. 2025</span>
 </section>
 
-<!-- DISCORD -->
-<section class="discord">
-  <h2>JOIN OUR DISCORD</h2>
-  <p>
-    Connect with ACF members, receive real-time updates,
-    and be part of our security network.
-  </p>
-  <a href="#" class="main-btn">Join Discord</a>
-</section>
-
 <footer>
-  <p>© 2025 ACF | Christmas Edition ❄️</p>
+  <p>© 2025 Alpha Contingency Force | Christmas Edition ❄️</p>
 </footer>
 
-<audio id="bell" src="sounds/bell.mp3"></audio>
 <script src="script.js"></script>
-  <!-- 🔐 ADMIN PANEL -->
-<div id="admin-panel" class="admin hidden">
-  <h2>ACF Admin Panel</h2>
-
-  <input type="password" id="admin-pass" placeholder="Enter admin password">
-  <button onclick="loginAdmin()">Login</button>
-
-  <div id="admin-tools" class="hidden">
-    <hr>
-
-    <h3>📸 Add Gallery Image</h3>
-    <input type="text" id="gallery-url" placeholder="Image URL">
-    <button onclick="addGallery()">Add Image</button>
-
-    <hr>
-
-    <h3>👥 Edit Members</h3>
-    <textarea id="members-text" rows="5"
-      placeholder="One member per line"></textarea>
-    <button onclick="saveMembers()">Save Members</button>
-
-    <p class="note">⚠️ Owner only</p>
-  </div>
-</div>
-
+</body>
+</html>
 <!-- 👥 MEMBERS SECTION -->
 <section class="members">
   <h2>OFFICIAL MEMBERS</h2>
