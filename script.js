@@ -81,3 +81,81 @@ function updateSnow() {
 }
 
 setInterval(drawSnow, 30);
+/* 🔐 ADMIN PASSWORD (CHANGE THIS) */
+const ADMIN_PASSWORD = "acf-owner-2025";
+
+/* SHOW PANEL ON SECRET TAP (mobile friendly) */
+let taps = 0;
+document.querySelector(".logo").addEventListener("click", () => {
+  taps++;
+  if (taps === 5) {
+    document.getElementById("admin-panel").classList.remove("hidden");
+    taps = 0;
+  }
+});
+
+/* LOGIN */
+function loginAdmin() {
+  const pass = document.getElementById("admin-pass").value;
+  if (pass === ADMIN_PASSWORD) {
+    document.getElementById("admin-tools").classList.remove("hidden");
+    localStorage.setItem("acf_admin", "true");
+  } else {
+    alert("Wrong password");
+  }
+}
+
+/* AUTO LOGIN */
+if (localStorage.getItem("acf_admin") === "true") {
+  document.getElementById("admin-panel").classList.remove("hidden");
+  document.getElementById("admin-tools").classList.remove("hidden");
+}
+
+/* 📸 GALLERY */
+function addGallery() {
+  const url = document.getElementById("gallery-url").value;
+  if (!url) return;
+
+  const img = document.createElement("img");
+  img.src = url;
+  img.className = "slide";
+
+  document.querySelector(".slider").appendChild(img);
+  saveGallery();
+}
+
+/* SAVE GALLERY */
+function saveGallery() {
+  const imgs = [...document.querySelectorAll(".slider img")].map(i => i.src);
+  localStorage.setItem("acf_gallery", JSON.stringify(imgs));
+}
+
+/* LOAD GALLERY */
+const savedGallery = JSON.parse(localStorage.getItem("acf_gallery") || "[]");
+savedGallery.forEach(url => {
+  const img = document.createElement("img");
+  img.src = url;
+  img.className = "slide";
+  document.querySelector(".slider").appendChild(img);
+});
+
+/* 👥 MEMBERS */
+function saveMembers() {
+  const text = document.getElementById("members-text").value;
+  const members = text.split("\n").filter(Boolean);
+  localStorage.setItem("acf_members", JSON.stringify(members));
+  loadMembers();
+}
+
+function loadMembers() {
+  const list = document.getElementById("member-list");
+  list.innerHTML = "";
+  const members = JSON.parse(localStorage.getItem("acf_members") || "[]");
+  members.forEach(m => {
+    const li = document.createElement("li");
+    li.textContent = m;
+    list.appendChild(li);
+  });
+}
+
+loadMembers();
