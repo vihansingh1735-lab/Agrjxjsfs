@@ -212,3 +212,53 @@ footer {
   padding: 20px;
   opacity: 0.6;
 }
+/* 🎄 LOADING SCREEN */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #080a24, #02030f);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-ring {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 6px solid rgba(106,92,255,0.2);
+  border-top: 6px solid #4cc9f0;
+  animation: spin 1.5s linear infinite;
+  box-shadow: 0 0 30px #6a5cff;
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-size: 42px;
+  color: #4cc9f0;
+  text-shadow: 0 0 25px #6a5cff;
+}
+
+.loader-sub {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.loader-christmas {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #4cff9f;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
