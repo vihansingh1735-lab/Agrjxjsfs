@@ -81,5 +81,35 @@
 
 <audio id="bell" src="sounds/bell.mp3"></audio>
 <script src="script.js"></script>
+  <!-- 🔐 ADMIN PANEL -->
+<div id="admin-panel" class="admin hidden">
+  <h2>ACF Admin Panel</h2>
+
+  <input type="password" id="admin-pass" placeholder="Enter admin password">
+  <button onclick="loginAdmin()">Login</button>
+
+  <div id="admin-tools" class="hidden">
+    <hr>
+
+    <h3>📸 Add Gallery Image</h3>
+    <input type="text" id="gallery-url" placeholder="Image URL">
+    <button onclick="addGallery()">Add Image</button>
+
+    <hr>
+
+    <h3>👥 Edit Members</h3>
+    <textarea id="members-text" rows="5"
+      placeholder="One member per line"></textarea>
+    <button onclick="saveMembers()">Save Members</button>
+
+    <p class="note">⚠️ Owner only</p>
+  </div>
+</div>
+
+<!-- 👥 MEMBERS SECTION -->
+<section class="members">
+  <h2>OFFICIAL MEMBERS</h2>
+  <ul id="member-list"></ul>
+</section>
 </body>
 </html>
