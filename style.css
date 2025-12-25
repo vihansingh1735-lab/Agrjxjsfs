@@ -94,15 +94,21 @@ header {
 
 /* 🔵 ACF LOGO (FIXED) */
 .acf-circle {
-  width: clamp(150px, 22vw, 220px);
-  height: clamp(150px, 22vw, 220px);
+  width: 200px;
+  height: 200px;
   margin: 30px auto;
   border-radius: 50%;
-  background: url("./assets/logo.jpg") center / cover no-repeat;
-  box-shadow: 0 0 60px rgba(106,92,255,0.9);
-  animation: pulseGlow 3s infinite ease-in-out;
+
+  background-image: url("/assets/logo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   position: relative;
   z-index: 3;
+
+  box-shadow: 0 0 60px rgba(106,92,255,0.9);
+  animation: pulseGlow 3s infinite ease-in-out;
 }
 
 @keyframes pulseGlow {
