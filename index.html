@@ -24,10 +24,10 @@
   <h1 class="logo">ACF</h1>
 </header>
 
-<!-- 🚀 HERO -->
+<!-- 🚀 Hero -->
 <section class="hero">
 
-  <!-- ✅ LOGO CIRCLE (NO IMG TAG) -->
+  <!-- 🔵 Logo Circle -->
   <div class="acf-circle"></div>
 
   <h2>COMING SOON</h2>
@@ -57,9 +57,16 @@
 </section>
 
 <footer>
-  <p>© 2025 Alpha Contingency Force | Christmas ❄️</p>
+  <p>© 2025 Alpha Contingency Force | Christmas Edition ❄️</p>
 </footer>
 
-<script src="script.js"></script>
+<!-- ✅ Loader Fix Script -->
+<script>
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    if (loader) loader.classList.add("hide");
+  });
+</script>
+
 </body>
 </html>
